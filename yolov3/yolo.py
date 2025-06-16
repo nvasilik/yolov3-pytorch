@@ -23,13 +23,13 @@ class YOLOv3:
 
         homedir = os.path.expanduser("~")
 
-        #weights_path = os.path.join(homedir, '.torch/models/yolov3.weights')
-        #os.makedirs(os.path.dirname(weights_path), exist_ok=True)
-
-        #if not os.path.isfile(weights_path):
-        url = 'https://data.pjreddie.com/files/yolov3.weights'
-        download_url(url, os.path.join(homedir, '.torch/models'))
         weights_path = os.path.join(homedir, '.torch/models/yolov3.weights')
+        os.makedirs(os.path.dirname(weights_path), exist_ok=True)
+
+        if not os.path.isfile(weights_path):
+            url = 'https://data.pjreddie.com/files/yolov3.weights'
+            download_url(url, os.path.join(homedir, '.torch/models'))
+        #weights_path = os.path.join(homedir, '.torch/models/yolov3.weights')
         outdir = os.path.dirname(weights_path)
         download_url(url, outdir)
 
