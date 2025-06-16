@@ -28,6 +28,8 @@ class YOLOv3:
 
         #if not os.path.isfile(weights_path):
         url = 'https://pjreddie.com/media/files/yolov3.weights'
+        download_url(url, os.path.join(homedir, '.torch/models'))
+        weights_path = os.path.join(homedir, '.torch/models/yolov3.weights')
         outdir = os.path.dirname(weights_path)
         download_url(url, outdir)
 
