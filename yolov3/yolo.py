@@ -50,8 +50,8 @@ class YOLOv3:
         self.return_dict = return_dict
 
         self.model = Darknet(model_def, img_size=img_size).to(device)
-        #self.model.load_darknet_weights(weights_path)
-        self.model.load_state_dict(torch.load(weights_path))
+        self.model.load_darknet_weights(weights_path)
+        #self.model.load_state_dict(torch.load(weights_path))
         self.model.eval()
 
     @torch.no_grad()
